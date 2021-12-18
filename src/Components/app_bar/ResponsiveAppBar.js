@@ -14,8 +14,9 @@ import MenuItem from '@mui/material/MenuItem';
 import { useScrollTrigger, useTheme } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { RefreshSharp } from '@mui/icons-material';
 
-const pages = ['About Me', 'Pricing', 'Blog'];
+const pages = ['Skills', 'Projects'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ElevationScroll(props) {
@@ -60,8 +61,6 @@ const ResponsiveAppBar = (props) => {
 //     setAnchorElUser(null);
 //   };
 
-
-
   return (
     <ElevationScroll>
       <AppBar color='transparent'>
@@ -69,8 +68,10 @@ const ResponsiveAppBar = (props) => {
           <Toolbar disableGutters>
             <Typography
               variant="h6"
+              id={0}
               noWrap
               component="div"
+              onClick={props.handlePageChange}
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
             >
               LOGO
@@ -83,7 +84,7 @@ const ResponsiveAppBar = (props) => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                //color="inherit"
               >
                 <MenuIcon />
               </IconButton>
@@ -105,9 +106,9 @@ const ResponsiveAppBar = (props) => {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                {pages.map((page, i) => (
+                  <MenuItem key={page} onClick={props.handlePageChange}>
+                    <Typography id={i+1} textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -122,11 +123,12 @@ const ResponsiveAppBar = (props) => {
               LOGO
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
+              {pages.map((page, i) => (
                 <Button
+                  id={i+1}
                   key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  onClick={props.handlePageChange}
+                  sx={{ my: 2, color: theme.palette.mode === 'dark' ? 'white' : 'black', display: 'block' }}
                 >
                   {page}
                 </Button>
