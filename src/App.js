@@ -2,12 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import { useRef } from 'react';
 import ResponsiveAppBar from './Components/app_bar/ResponsiveAppBar';
-import { Paper, useMediaQuery } from '@mui/material';
+import { Divider, Paper, useMediaQuery } from '@mui/material';
 import backgroundImage from './BackgroundImage.jpg'
 import HomePage from './Components/pages/HomePage';
 import AboutPage from './Components/pages/AboutPage';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
+import ContactMePage from './Components/pages/ContactMePage';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,15 +27,19 @@ function App() {
 
   const homePageRef = useRef();
   const secondPageRef = useRef();
+  const thirdPageRef = useRef();
 
-  const handlePageChange = (el) => {  
-    console.log(el.target.id);
-    switch(el.target.id) {
+  const handlePageChange = (e) => {  
+    // console.log(e.target.id);
+    switch(e.target.id) {
       case '0':
         homePageRef.current.scrollIntoView({ behavior: 'smooth' });
         break;
       case '1':
         secondPageRef.current.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case '2':
+        thirdPageRef.current.scrollIntoView({ behavior: 'smooth' });
         break;
     }
   }
@@ -45,6 +50,8 @@ function App() {
         <ResponsiveAppBar darkMode={darkMode} setDarkMode={setDarkMode} handlePageChange={handlePageChange} />
         <HomePage ref={homePageRef} backgroundImage={backgroundImage} />
         <AboutPage ref={secondPageRef} />
+        {/* <Divider /> */}
+        <ContactMePage ref={thirdPageRef} />
       </ThemeProvider>
     </div>
   );
