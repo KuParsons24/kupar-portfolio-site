@@ -11,10 +11,10 @@ const AboutPage = forwardRef((props, ref) => {
     <Paper ref={ref} square sx={{
       // backgroundColor: 'darkslategray',
       // backgroundBlendMode: theme.palette.mode === 'dark' ? 'multiply' : 'screen',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundAttachment: 'fixed',
+      // backgroundPosition: 'center',
+      // backgroundRepeat: 'no-repeat',
+      // backgroundSize: 'cover',
+      // backgroundAttachment: 'fixed',
       height: '100vh',
     }}>
       {/* <Toolbar /> */}
