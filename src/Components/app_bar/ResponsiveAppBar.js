@@ -16,7 +16,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { RefreshSharp } from '@mui/icons-material';
 
-const pages = ['Skills', 'Projects'];
+const pages = ['Skills', 'Contact'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ElevationScroll(props) {
@@ -55,6 +55,11 @@ const ResponsiveAppBar = (props) => {
 
   const handleToggleDarkMode = () => {
     props.setDarkMode(!props.darkMode);
+  }
+
+  const handleMobileNavClick = async (e) => {
+    await handleCloseNavMenu();
+    props.handlePageChange(e);
   }
 
 //   const handleCloseUserMenu = () => {
@@ -107,7 +112,7 @@ const ResponsiveAppBar = (props) => {
                 }}
               >
                 {pages.map((page, i) => (
-                  <MenuItem key={page} onClick={props.handlePageChange}>
+                  <MenuItem key={page} onClick={handleMobileNavClick}>
                     <Typography id={i+1} textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
