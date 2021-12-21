@@ -16,7 +16,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { RefreshSharp } from '@mui/icons-material';
 
-const pages = ['Skills', 'Contact'];
+const pages = ['Skills', 'Projects', 'Contact'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ElevationScroll(props) {
