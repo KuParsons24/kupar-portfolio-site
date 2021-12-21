@@ -12,12 +12,12 @@ import ContactMePage from './Components/pages/ContactMePage';
 import ProjectsPage from './Components/pages/ProjectsPage';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  useEffect(() => {
-    setDarkMode(prefersDarkMode);
-  },[prefersDarkMode]);
+  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  // useEffect(() => {
+  //   setDarkMode(prefersDarkMode);
+  // },[prefersDarkMode]);
 
   let theme = createTheme({
     palette: {
@@ -53,7 +53,7 @@ function App() {
     <div>
       <ThemeProvider theme={theme}>
         <ResponsiveAppBar darkMode={darkMode} setDarkMode={setDarkMode} handlePageChange={handlePageChange} />
-        <HomePage ref={homePageRef} backgroundImage={backgroundImage} />
+        <HomePage ref={homePageRef} backgroundImage={backgroundImage} handlePageChange={handlePageChange} />
         <AboutPage ref={secondPageRef} />
         <ProjectsPage ref={thirdPageRef} />
         {/* <Divider /> */}

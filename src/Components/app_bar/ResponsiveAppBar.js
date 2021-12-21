@@ -142,7 +142,7 @@ const ResponsiveAppBar = (props) => {
 
             <Box sx={{ flexGrow: 0 }}>
               {/* <Tooltip title="Open settings"> */}
-                <IconButton onClick={handleToggleDarkMode} sx={{ p: 0 }}>
+                <IconButton disabled onClick={handleToggleDarkMode} sx={{ p: 0, visibility:'hidden' }}>
                   {theme.palette.mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
                 </IconButton>
               {/* </Tooltip> */}
