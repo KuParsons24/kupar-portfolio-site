@@ -27,7 +27,7 @@ const HomePage = forwardRef((props, ref) => {
           <Grid item xs={12}>
             <Stack spacing={3} direction='row' justifyContent='center'>
               <Button size='large' variant='outlined' href='/pdfs/KurtisResume.pdf' target='_blank' rel='noopener noreferrer'>Resume</Button>
-              <Button size='large' variant='outlined'>Projects</Button>
+              <Button size='large' variant='outlined' id='2' onClick={props.handlePageChange}>Projects</Button>
             </Stack>
           </Grid>
           {/* <Grid container item xs={6} justifyContent='left'>
