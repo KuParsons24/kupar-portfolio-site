@@ -9,6 +9,7 @@ import AboutPage from './Components/pages/AboutPage';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
 import ContactMePage from './Components/pages/ContactMePage';
+import ProjectsPage from './Components/pages/ProjectsPage';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,6 +29,7 @@ function App() {
   const homePageRef = useRef();
   const secondPageRef = useRef();
   const thirdPageRef = useRef();
+  const fourthPageRef = useRef();
 
   const handlePageChange = (e) => {  
     // console.log(e.target.id);
@@ -41,6 +43,9 @@ function App() {
       case '2':
         thirdPageRef.current.scrollIntoView({ behavior: 'smooth' });
         break;
+      case '3':
+        fourthPageRef.current.scrollIntoView({ behavior: 'smooth' });
+        break;
     }
   }
 
@@ -50,8 +55,9 @@ function App() {
         <ResponsiveAppBar darkMode={darkMode} setDarkMode={setDarkMode} handlePageChange={handlePageChange} />
         <HomePage ref={homePageRef} backgroundImage={backgroundImage} />
         <AboutPage ref={secondPageRef} />
+        <ProjectsPage ref={thirdPageRef} />
         {/* <Divider /> */}
-        <ContactMePage ref={thirdPageRef} />
+        <ContactMePage ref={fourthPageRef} />
       </ThemeProvider>
     </div>
   );
