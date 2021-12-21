@@ -19,7 +19,7 @@ const ProjectsPage = forwardRef((props, ref) => {
   };
 
   return(
-    <Paper ref={ref} square sx={{
+    <Paper elevation={2} ref={ref} square sx={{
       // backgroundColor: 'darkslategray',
       // backgroundBlendMode: theme.palette.mode === 'dark' ? 'multiply' : 'screen',
       // backgroundPosition: 'center',
