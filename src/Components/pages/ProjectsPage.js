@@ -27,13 +27,13 @@ const ProjectsPage = forwardRef((props, ref) => {
       // backgroundSize: 'cover',
       // backgroundAttachment: 'fixed',
       height: 'auto',
-      minHeight: '100vh',
+      minHeight: '100%',
     }}>
       {/* <Toolbar /> */}
-      <Container maxWidth='xl' sx={{display: 'flex', alignItems: 'center', minHeight: '100vh'}}>
-        <Grid container spacing={2}>
+      <Container maxWidth='xl' sx={{display: 'flex', alignItems: 'center', minHeight: '100%'}}>
+        <Grid container spacing={2} paddingLeft='10px' paddingRight='10px' paddingTop='100px' paddingBottom='100px'>
           <Grid item xs={12} >
-            <Typography textAlign='center' variant='h3' >Projects</Typography>
+            <Typography textAlign='center' variant='h3' marginBottom='100px' >Projects</Typography>
           </Grid>
           <Grid container item justifyContent='center' xs={12}>
             <ProjectCard project={project1} />
