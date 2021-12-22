@@ -40,14 +40,14 @@ const AboutPage = forwardRef((props, ref) => {
           <Grid item md={6} xs={12}>
             <Typography variant='p' textAlign='center'>My name is Kurtis Parsons and I am a full-stack web developer experienced in the MERN stack. My background is in electrical engineering but I've discovered I have a love for software development!</Typography>
           </Grid>
-          <Grid container item md={6} xs={12} justifyContent='center' >
+          <Grid container item md={6} xs={12} justifyContent='left' >
             <List disablePadding >
               <ListItem>
                 <Typography>Skills:</Typography>
               </ListItem>
               {skills.map((skill) => {
                 return (
-                  <ListItem>
+                  <ListItem key={skill} >
                     <ListItemIcon>
                       <Circle fontSize='small'/>
                     </ListItemIcon>
