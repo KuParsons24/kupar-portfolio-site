@@ -15,7 +15,7 @@ router.route('/contact')
 });
 
 // Routes used for admin tool.
-router.route('/admin/contact/api')
+router.route('/admin/contact')
 .get(getAllEntries)
 .delete(deleteEntries)
 .put(modifyEntry)
