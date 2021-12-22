@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 import { Button, Container, Grid, Paper, Stack, Toolbar, Typography } from '@mui/material';
 import ResponsiveAppBar from '../app_bar/ResponsiveAppBar';
 import { useTheme } from '@mui/system';
+import { isMobile } from 'react-device-detect';
 
 const HomePage = forwardRef((props, ref) => {
   const theme = useTheme();
@@ -15,7 +16,7 @@ const HomePage = forwardRef((props, ref) => {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      backgroundAttachment: 'fixed',
+      backgroundAttachment: isMobile ? 'scroll' : 'fixed',
       height: '100vh',
     }}>
       {/* <Toolbar /> */}
