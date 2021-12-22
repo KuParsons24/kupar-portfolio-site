@@ -13,6 +13,30 @@ import ProjectsPage from './Components/pages/ProjectsPage';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [activePage, setActivePage] = useState(0);
+  
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+    if (position >= (fourthPageRef.current.offsetTop - fourthPageRef.current.scrollHeight)) {
+      setActivePage(3);
+    } else if (position >= (thirdPageRef.current.offsetTop - thirdPageRef.current.scrollHeight)) {
+      setActivePage(2);
+    } else if (position >= (secondPageRef.current.offsetTop - secondPageRef.current.scrollHeight)) {
+      setActivePage(1);
+    } else {
+      setActivePage(0);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   // useEffect(() => {
@@ -38,10 +62,10 @@ function App() {
         homePageRef.current.scrollIntoView({ behavior: 'smooth' });
         break;
       case '1':
-        secondPageRef.current.scrollIntoView({ behavior: 'smooth' });
+        secondPageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         break;
       case '2':
-        thirdPageRef.current.scrollIntoView({ behavior: 'smooth' });
+        thirdPageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         break;
       case '3':
         fourthPageRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -52,7 +76,7 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <ResponsiveAppBar darkMode={darkMode} setDarkMode={setDarkMode} handlePageChange={handlePageChange} />
+        <ResponsiveAppBar darkMode={darkMode} setDarkMode={setDarkMode} handlePageChange={handlePageChange} activePage={activePage} />
         <HomePage ref={homePageRef} backgroundImage={backgroundImage} handlePageChange={handlePageChange} />
         <AboutPage ref={secondPageRef} />
         <ProjectsPage ref={thirdPageRef} />

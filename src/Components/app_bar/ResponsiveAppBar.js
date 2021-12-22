@@ -138,7 +138,7 @@ const ResponsiveAppBar = (props) => {
                   id={i+1}
                   key={page}
                   onClick={props.handlePageChange}
-                  sx={{ my: 2, color: theme.palette.mode === 'dark' ? 'white' : 'black', display: 'block' }}
+                  sx={{ my: 2, color: theme.palette.mode === 'dark' ? props.activePage === i+1 ? theme.palette.primary : 'white' : 'black', display: 'block' }}
                 >
                   {page}
                 </Button>
