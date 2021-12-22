@@ -74,9 +74,9 @@ const ContactMePage = forwardRef((props, ref) => {
     }}>
       {/* <Toolbar /> */}
       <Container maxWidth='xl' component='form' onSubmit={handleSubmit} sx={{display: 'flex', alignItems: 'center', minHeight: '100%' }}>
-        <Grid container spacing={2} paddingLeft='10px' paddingRight='10px'>
-          <Grid item xs={12} marginBottom='100px' marginTop='100px'>
-            <Typography textAlign='center' variant='h3'>Contact Me</Typography>
+        <Grid container spacing={2} paddingLeft='10px' paddingRight='10px' paddingTop='100px' paddingBottom='100px'>
+          <Grid item xs={12} >
+            <Typography textAlign='center' variant='h3' marginBottom='100px'>Contact Me</Typography>
           </Grid>
           <Grid item sm={6} xs={12} >
             <TextField required fullWidth id='name' label='Name' variant='outlined' />
