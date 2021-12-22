@@ -11,12 +11,13 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { useScrollTrigger, useTheme } from '@mui/material';
+import { SvgIcon, useScrollTrigger, useTheme } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { RefreshSharp } from '@mui/icons-material';
+import { ReactComponent as Logo } from '../../logo.svg';
 
-const pages = ['Skills', 'Projects', 'Contact'];
+const pages = ['About', 'Projects', 'Contact'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ElevationScroll(props) {
@@ -71,18 +72,19 @@ const ResponsiveAppBar = (props) => {
       <AppBar color='transparent'>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              id={0}
-              noWrap
-              component="div"
+            <SvgIcon
+              // variant="h6"
+              // id={0}
+              // noWrap
+              // component="div"
+              id='0'
+              fontSize='large'
+              component={Logo}
+              viewBox="75 80 100 100"
               onClick={props.handlePageChange}
-              sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-            >
-              LOGO
-            </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+              sx={{  mr: 1, display: { xs: 'none', md: 'flex' }, width: '80px', "&:hover": {cursor: 'pointer'} }}
+            />
+            <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -118,15 +120,18 @@ const ResponsiveAppBar = (props) => {
                 ))}
               </Menu>
             </Box>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              textAlign='center'
+            <SvgIcon
+              // variant="h6"
+              // id={0}
+              // noWrap
+              // component="div"
+              id='0'
+              fontSize='large'
+              component={Logo}
+              viewBox="110 80 100 100"
+              onClick={props.handlePageChange}
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-            >
-              LOGO
-            </Typography>
+            />
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page, i) => (
                 <Button
