@@ -28,7 +28,8 @@ const AboutPage = forwardRef((props, ref) => {
       // backgroundRepeat: 'no-repeat',
       // backgroundSize: 'cover',
       // backgroundAttachment: 'fixed',
-      height: '100vh',
+      height: 'auto',
+      minHeight: '100vh',
     }}>
       {/* <Toolbar /> */}
       <Container maxWidth='xl' sx={{display: 'flex', alignItems: 'center', minHeight: '100vh'}}>
@@ -39,7 +40,7 @@ const AboutPage = forwardRef((props, ref) => {
           <Grid item md={6} xs={12}>
             <Typography variant='p' textAlign='center'>My name is Kurtis Parsons and I am a full-stack web developer experienced in the MERN stack. My background is in electrical engineering but I've discovered I have a love for software development!</Typography>
           </Grid>
-          <Grid container item md={6} xs={12}  >
+          <Grid container item md={6} xs={12} justifyContent='center' >
             <List disablePadding >
               <ListItem>
                 <Typography>Skills:</Typography>

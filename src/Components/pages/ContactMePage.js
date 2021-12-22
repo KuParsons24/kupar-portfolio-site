@@ -70,12 +70,12 @@ const ContactMePage = forwardRef((props, ref) => {
       // backgroundSize: 'cover',
       // backgroundAttachment: 'fixed',
       height: 'auto',
-      minHeight: '100vh'
+      minHeight: '100%'
     }}>
       {/* <Toolbar /> */}
-      <Container maxWidth='xl' component='form' onSubmit={handleSubmit} sx={{display: 'flex', alignItems: 'center', minHeight: '100vh' }}>
-        <Grid container spacing={2} >
-          <Grid item xs={12}>
+      <Container maxWidth='xl' component='form' onSubmit={handleSubmit} sx={{display: 'flex', alignItems: 'center', minHeight: '100%' }}>
+        <Grid container spacing={2} paddingLeft='10px' paddingRight='10px'>
+          <Grid item xs={12} marginBottom='100px' marginTop='100px'>
             <Typography textAlign='center' variant='h3'>Contact Me</Typography>
           </Grid>
           <Grid item sm={6} xs={12} >
@@ -87,7 +87,7 @@ const ContactMePage = forwardRef((props, ref) => {
           <Grid item xs={12} >
             <TextField multiline minRows={3} fullWidth id='message' label='Message' variant='outlined' />
           </Grid>
-          <Grid container item justifyContent='right' xs={12} >
+          <Grid container item justifyContent='right' marginBottom='100px' xs={12} >
             <LoadingButton loading={submitting} variant='contained' type='submit' >Submit</LoadingButton>
           </Grid>
         </Grid>
