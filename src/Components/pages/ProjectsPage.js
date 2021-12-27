@@ -12,7 +12,7 @@ const ProjectsPage = forwardRef((props, ref) => {
   const project1 = {
     title: 'Contact Database',
     body: 'React CRUD application for keeping track of contacts in an address book database. Node.js and express is used for the backend. Sequelize ORM and SQL lite is used for the database.',
-    demoLink: 'http://kuparsons24.ddnsfree.com/crud',
+    demoLink: '/crud',
     gitLink: 'https://github.com/KuParsons24/crud-admin-dashboard',
     image: CrudImage,
     alt: 'crud_image'
