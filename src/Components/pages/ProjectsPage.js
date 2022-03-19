@@ -5,6 +5,7 @@ import ResponsiveAppBar from '../app_bar/ResponsiveAppBar';
 import { useTheme } from '@mui/system';
 import ProjectCard from '../display/ProjectCard';
 import CrudImage from '../../Crud.PNG';
+import HabitImage from '../../habitTracker.PNG';
 
 const ProjectsPage = forwardRef((props, ref) => {
   const theme = useTheme();
@@ -16,6 +17,15 @@ const ProjectsPage = forwardRef((props, ref) => {
     gitLink: 'https://github.com/KuParsons24/crud-admin-dashboard',
     image: CrudImage,
     alt: 'crud_image'
+  };
+
+  const project2 = {
+    title: 'Habit Tracker',
+    body: 'React application for tracking habits. Node.js and express is used for the backend. Mongo DB for the database. User credentials are sent using base 64 encoding in the header. Use username: "guest", password: "pass" for demo purposes.',
+    demoLink: '/habit-tracker',
+    gitLink: 'https://github.com/KuParsons24/habit-tracker',
+    image: HabitImage,
+    alt: 'habit_image'
   };
 
   return(
@@ -35,8 +45,11 @@ const ProjectsPage = forwardRef((props, ref) => {
           <Grid item xs={12} >
             <Typography textAlign='center' variant='h3' marginBottom='100px' >Projects</Typography>
           </Grid>
-          <Grid container item justifyContent='center' xs={12}>
+          <Grid container item justifyContent='center' sm={6} xs={12}>
             <ProjectCard project={project1} />
+          </Grid>
+          <Grid container item justifyContent='center' sm={6} xs={12}>
+            <ProjectCard project={project2} />
           </Grid>
         </Grid>
       </Container>
