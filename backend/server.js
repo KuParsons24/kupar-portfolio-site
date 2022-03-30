@@ -15,7 +15,7 @@ app.listen(port, () => {
 });
 
 app.use(cors({
-  origin: ['http://localhost:3001', 'http://kuparsons24.ddnsfree.com']
+  origin: ['http://localhost:3001', 'https://kuparsons24.ddnsfree.com', 'https://kurtisparsons.com']
 }));
 
 app.use(express.json());
